@@ -87,7 +87,7 @@ class productController extends Controller
         $products->quantity = $request->input('quantity');
          $products->images=$fileNameStore2;
        $products->save();
-       return redirect('/product');
+       return redirect('/product')->with('success' , 'Product Created Successfully');
     }
 
     /**
@@ -173,7 +173,7 @@ class productController extends Controller
         }
         
        $products->save();
-       return redirect('/product');
+       return redirect('/product')->with('success' , 'Product deleted successfully');
     }
 
     /**
@@ -185,7 +185,12 @@ class productController extends Controller
     public function destroy($id)
     {
           $products = products::find($id);
+          if($products != null){
         $products->delete();
-        return redirect ('/product');
+     return redirect ('/product')->with('success', 'Product deleted successfully');}
+       
+
+            return redirect ('/product')->with('error' , 'error when deleting product');
+       
     }
 }

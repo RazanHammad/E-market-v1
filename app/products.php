@@ -13,4 +13,9 @@ class products extends Model
         return $this->belongsTo(catagory::class);
 
     }
+
+    public function reviews(){
+
+    	return $this->hasmany('App\reviews');
+    }
 }

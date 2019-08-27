@@ -77,7 +77,7 @@ class usersController extends Controller
          $userapp->type = $request->input('type');
          
        $userapp->save();
-       return redirect('/user');
+       return redirect('/user')->with('success' , 'user created successfully');
     }
 
     /**
@@ -88,7 +88,8 @@ class usersController extends Controller
      */
     public function show($id)
     {
-        //
+        $appuser = appUser::find($id);
+        return view ('dashboard.users.show')->with('appuser',$appuser);
     }
 
     /**
@@ -140,7 +141,7 @@ class usersController extends Controller
        $userapp = appUser::find($id);
        $userapp->username = $request->input('username');
        $userapp->email = $request->input('email');
-        $userapp->password = $request->input('password');
+        $userapp->password = Hash::make($request->input('password'));
         if($request->hasFile('img')){
             $userapp->img = $fileNameStore;
 
@@ -150,7 +151,7 @@ class usersController extends Controller
          $userapp->type = $request->input('type');
          
        $userapp->save();
-       return redirect('/user');
+       return redirect('/user')->with('success' ,'user updated successfully');
     }
 
     /**
@@ -163,6 +164,6 @@ class usersController extends Controller
     {
            $userapp = appUser::find($id);
         $userapp->delete();
-        return redirect ('/user');
+        return redirect ('/user')->with('success' , 'user deleted successfully');
     }
 }

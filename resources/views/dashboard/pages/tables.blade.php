@@ -63,7 +63,7 @@
           </li>
           <li class="breadcrumb-item active">@yield('head')</li>
         </ol>
-
+        @include('dashboard.includes.message')
      @yield('table')
     
 

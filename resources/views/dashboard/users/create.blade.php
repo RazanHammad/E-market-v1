@@ -17,7 +17,7 @@ Create User
 @section('content')
 
 {{ Form::open(['action' => 'usersController@store' , 'method' => 'post','enctype'=>'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -47,7 +47,7 @@ Create User
         {{Form::text('mobile','',['placeholder'=>'Mobile','class'=>'form-control'])}}
           <br>
           
-                          {{Form::label('type', 'Type')}}
+                          {{Form::label('User Type', 'Type')}}
 
  <br>
           <select class="form-control" name="type">
@@ -64,8 +64,9 @@ Create User
 <br>
 
 
-{{Form::label('img', 'Image')}}
+{{Form::label('img', 'User Image')}}
   <br>
+
      {{Form::file('img'),['class'=>'btn']}}
 
      
@@ -73,7 +74,8 @@ Create User
              <br>
         
 
-     {{Form::submit('Create',['class'=>'btn btn-primary'])}}
+     {{Form::submit('Create',['class'=>'btn btn-primary btn-sm'])}}
+     <a class="btn btn-primary btn-sm" href="/user" role="button">Back</a>
     </div>
   </div>
 </div>

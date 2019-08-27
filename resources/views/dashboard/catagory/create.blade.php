@@ -17,7 +17,7 @@ Create Catagory
 @section('content')
 
 {{ Form::open(['action' => 'catagoryController@store' , 'method' => 'post','enctype'=>'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -29,7 +29,8 @@ Create Catagory
           <br>
         {{Form::text('title','',['placeholder'=>'Title','class'=>'form-control'])}}
           <br>
-        
+         {{Form::label('img', 'Catagory Image')}}
+         <br>
      {{Form::file('img'),['class'=>'btn']}}
 
 
@@ -38,7 +39,9 @@ Create Catagory
         
 
      {{Form::submit('Create',['class'=>'btn btn-primary'])}}
+     <a class="btn btn-primary" href="/catagory" role="button">Back</a>
     </div>
+  
   </div>
 </div>
   {{ Form::close() }}

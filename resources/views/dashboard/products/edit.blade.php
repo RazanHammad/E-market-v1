@@ -6,18 +6,18 @@ Edit Product
 
 @section('subtitle')
 
-Create Product
+Edit Product
 
 @endsection
 
 @section('head')
-Create Product
+Edit Product
 
 @endsection
 @section('content')
 
 {{ Form::open(['action' => ['productController@update' ,$products->id], 'method' => 'post','enctype'=>'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -41,28 +41,35 @@ Create Product
           <br>
         {{Form::text('price',$products->price,['placeholder'=>'Price','class'=>'form-control'])}}
           <br>
-          
+           {{Form::label('catagory', 'Catagory')}}
           <select class="form-control" name="catagory_id">
              
         <option>Select Catagory</option>
-            @foreach ($catagory as $key => $value)
+             @foreach ($catagory as $key => $value)
    
-              <option value="{{ $key }}" {{ ( $key == $selectedID) ? 'selected' : '' }} >{{ $value }} </option>
+              <option value="{{ $key }}" @if($key === $products->catagory_id)
+                    selected
+                    @endif
+
+                >{{ $value }} </option>
    
 
               @endforeach
+
                           </select>
 <br>
-<br>
-     {{Form::file('img'),$products->img,['class'=>'btn']}}
+      {{Form::label('img', 'Product Image')}}
+          <br>
+     {{Form::file('img'),url('storage/img/'.$products->img),['class'=>'btn']}}
 
-     {{Form::file('images'),$products->images,['class'=>'btn']}}
-             <br>
-             <br>
-        
+        <br>
+        <br>
               {{Form::hidden('_method','PUT')}}
-     {{Form::submit('Update',['class'=>'btn btn-primary'])}}
+     {{Form::submit('Update',['class'=>'btn btn-primary btn-sm'])}}
+      <a class="btn btn-primary btn-sm" href="/product" role="button">Back</a>
     </div>
+    
+
   </div>
 </div>
   {{ Form::close() }}

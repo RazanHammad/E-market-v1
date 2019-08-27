@@ -6,15 +6,16 @@
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">{{ Auth::user()->name }}</a>
+         <!-- <a class="dropdown-item" href="#"></a>
           <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Log Out</a>
           <div class="dropdown-divider"></div>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
-                                    </form>
+                                    </form> -->
         </div>
+     
       </li>
       
     </ul>

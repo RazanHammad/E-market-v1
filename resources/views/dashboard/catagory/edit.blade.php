@@ -18,7 +18,7 @@ Edit Catagory
 @section('content')
 
  {{ Form::open(['action' => ['catagoryController@update',$catagory->id ], 'method' => 'post','enctype' => 'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -29,7 +29,8 @@ Edit Catagory
         <br>
         {{Form::text('title',$catagory->title,['placeholder'=>'Catagory Title','class'=>'form-control'])}}
     <br>
-        
+        {{Form::label('img', 'Catagory Image')}}
+        <br>
          {{Form::file('img'),'$catagory->img',['class'=>'btn']}}
 
 
@@ -38,6 +39,7 @@ Edit Catagory
      
           {{Form::hidden('_method','PUT')}}
      {{Form::submit('Update',['class'=>'btn btn-primary'])}}
+      <a class="btn btn-primary" href="/catagory" role="button">Back</a>
     </div>
   </div>
 </div>

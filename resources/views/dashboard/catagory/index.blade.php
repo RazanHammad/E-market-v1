@@ -7,7 +7,7 @@ Show Catagory
 @endsection
 
 @section('head')
-Show Products
+Show Catagory
 
 @endsection
 
@@ -18,7 +18,7 @@ Show Products
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Show Catagory</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -26,36 +26,21 @@ Show Products
                   <tr>
                     <th>Catagory Title</th>
                     <th>Catagory Image</th>
-                    <th>Update</th>
+                    <th><a class="btn btn-success" href="/catagory/create" role="button">Create Catagory +</a></th>
                     
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr>
-                    <th>Catagory Title</th>
-                <th>Catagory Image</th>
-                    <th>Update</th>
-                  </tr>
-                </tfoot>
+                
                   @foreach($catagory as $ctg)
                 <tbody>
                 
                   <tr>
                     <td>{{$ctg->title}}</td>
-                    <td>   <img class="img-responsive" src="/storage/img/{{$ctg->img}} " alt="{{$ctg->img}}" ></td>
+                    <td>   <img class="img-responsive" style="max-height: 70px;" src="{{url('storage/img/'.$ctg->img)}}"/></td>
                     <td>
-                       
-                     
-
-                          {{ Form::open(['action' => ['catagoryController@destroy' ,$ctg->id], 'method' => 'post']) }}
-                           
-
-                          {{Form::hidden('_method','delete')}}
-                          {{Form::submit('Delete',['class'=>'btn btn-link'])}}
-                          <a href="/catagory/{{$ctg->id}}/edit" class="btn btn-link">Edit</a>
-                           <a href="/catagory/create" class="btn btn-link">Create</a> 
-                           <a href="/catagory/{{$ctg->id}}" class="btn btn-link">More</a> 
-                          {{ Form::close() }}
+                    
+                           <a class="btn btn-primary" href="/catagory/{{$ctg->id}}" role="button">Details</a> 
+                         
 
 
                      </td>

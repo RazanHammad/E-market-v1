@@ -66,6 +66,7 @@
         <!-- Page Content -->
         <h 1>@yield('head')</h1>
         <hr>
+        @include('dashboard.includes.message')
        @yield('content')
 
       </div>

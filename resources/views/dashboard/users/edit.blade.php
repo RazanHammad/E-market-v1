@@ -5,19 +5,18 @@ Edit User
 @endsection
 
 @section('subtitle')
-
-Create User
+Edit User
 
 @endsection
 
 @section('head')
-Create User
+Edit User
 
 @endsection
 @section('content')
 
 {{ Form::open(['action' =>['usersController@update',$appuser->id]  , 'method' => 'post','enctype'=>'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -46,23 +45,30 @@ Create User
         {{Form::text('mobile',$appuser->mobile,['placeholder'=>'Mobile','class'=>'form-control'])}}
           <br>
           
-                          {{Form::label('type', 'Type')}}
+                          {{Form::label('type', 'User Type')}}
 
  <br>
           <select class="form-control" name="type">
         <option>Select Type</option>
             
    
-              <option value="admin" >Admin </option>
-              <option value="user" >Super Admin </option>
-              <option value="user" >User </option>
+              <option value="admin" @if('admin' === $appuser->type) 
+                    selected
+                  @endif
+                >Admin </option>
+              <option value="superadmin" @if('superadmin' === $appuser->type) 
+                    selected
+                  @endif>Super Admin </option>
+              <option value="user" @if('user' === $appuser->type) 
+                    selected
+                  @endif>User </option>
    
 
               
                           </select>
 
 <br>
-  {{Form::label('img', 'Image')}}
+  {{Form::label('img', 'User Image')}}
   <br>
      {{Form::file('img'),$appuser->img,['class'=>'btn']}}
 
@@ -72,7 +78,8 @@ Create User
         
         {{Form::hidden('_method','PUT')}}
 
-     {{Form::submit('Update',['class'=>'btn btn-primary'])}}
+     {{Form::submit('Update',['class'=>'btn btn-primary btn-sm'])}}
+      <a class="btn btn-primary btn-sm" href="/user" role="button">Back</a>
     </div>
   </div>
 </div>

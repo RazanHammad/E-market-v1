@@ -17,7 +17,7 @@ Create Product
 @section('content')
 
 {{ Form::open(['action' => 'productController@store' , 'method' => 'post','enctype'=>'multipart/form-data']) }}
-   <div class="container">
+   <div class="row container">
  
   <div class="panel panel-default">
     
@@ -42,6 +42,8 @@ Create Product
         {{Form::text('price','',['placeholder'=>'Price','class'=>'form-control'])}}
           <br>
           
+                  {{Form::label('catagory', 'Catagory')}}
+          <br>
           <select class="form-control" name="catagory_id">
         <option>Select Catagory</option>
             @foreach ($catagory as $key => $value)
@@ -52,15 +54,18 @@ Create Product
               @endforeach
                           </select>
 <br>
-<br>
+
+
+                  {{Form::label('img', 'Product Image')}}
+          <br>
      {{Form::file('img'),['class'=>'btn']}}
 
-     {{Form::file('images'),['class'=>'btn']}}
-             <br>
-             <br>
-        
+                          <br>
+        <br>
 
-     {{Form::submit('Create',['class'=>'btn btn-primary'])}}
+     {{Form::submit('Create',['class'=>'btn btn-primary btn-sm'])}}
+      <a class="btn btn-primary btn-sm" href="/product" role="button">Back</a>
+
     </div>
   </div>
 </div>

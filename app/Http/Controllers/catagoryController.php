@@ -61,7 +61,7 @@ class catagoryController extends Controller
        $catagory->title = $request->input('title');
        $catagory->img = $fileNameStore;
        $catagory->save();
-       return redirect('/catagory');
+       return redirect('/catagory')->with('success' , 'catagory created successfully');
     }
 
     /**
@@ -122,7 +122,7 @@ $catagory= catagory::find($id);
         $catagory->img = $fileNameStore;
 }
        $catagory->save();
-       return redirect('/catagory');
+       return redirect('/catagory')->with('success' , 'catagory updated successfully');
     }
 
     /**
@@ -135,6 +135,6 @@ $catagory= catagory::find($id);
     {
         $catagory = catagory::find($id);
         $catagory->delete();
-        return redirect ('/catagory');
+        return redirect ('/catagory')->with('success' , 'catagory deleted successfully');
     }
 }

@@ -1,14 +1,69 @@
-@extends('dashboard.pages.index')
 
-@section('content')
 
-<div class="panel panel-danger container">
-    <div class="panel-heading">{{$product->title}}</div>
- <div class="panel-body">
- 	{{$product->catagory->name}}
-   <img class="img-responsive" src="/storage/img/{{$product->img}}" alt="{{$product->img}}" style="width:50%,height:50%"></div>
 
-<a class="btn btn-link" href="/product">back</a>
-</div>
+@extends('dashboard.pages.tables')
 
+@section('table')
+
+
+   <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Show Product</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Product Title</th>
+                    <th>Catagory Name</th>
+                  	<th> <a class="btn btn-primary" href="/product" role="button">Back</a></th>
+                    
+                  </tr>
+                </thead>
+            
+                <tbody>
+                
+                  <tr>
+                    <td>{{$product->title}}</td>
+                    <td>{{$product->catagory->title}}</td>
+                   
+                    <td>
+                       <script>
+
+                          function ConfirmDelete()
+                          {
+                          var x = confirm("Are you sure you want to delete?");
+                          if (x)
+                            return true;
+                          else
+                            return false;
+                          }
+
+                        </script>
+                                             
+
+                          {{ Form::open(['action' => ['productController@destroy' ,$product->id],'onsubmit' => 'return ConfirmDelete()', 'method' => 'post']) }}
+                           
+
+                          {{Form::hidden('_method','delete')}}
+                          {{Form::submit('Delete',['class'=>'btn btn-danger' ,'role'=>'button'])}}
+                        
+                           <a class="btn btn-success" href="/product/{{$product->id}}/edit" role="button">Edit</a>
+                            
+                          {{ Form::close() }}
+
+
+           </td>
+                
+                  </tr>
+                   
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+          
+        </div>
 @endsection
