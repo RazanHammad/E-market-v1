@@ -18,7 +18,7 @@
                   <tr>
                     <th>Product Title</th>
                     <th>Catagory Name</th>
-                  	<th> <a class="btn btn-primary" href="/product" role="button">Back</a></th>
+                  	<th> <a class="btn btn-primary" href="/admin/product" role="button">Back</a></th>
                     
                   </tr>
                 </thead>
@@ -50,7 +50,7 @@
                           {{Form::hidden('_method','delete')}}
                           {{Form::submit('Delete',['class'=>'btn btn-danger' ,'role'=>'button'])}}
                         
-                           <a class="btn btn-success" href="/product/{{$product->id}}/edit" role="button">Edit</a>
+                           <a class="btn btn-success" href="/admin/product/{{$product->id}}/edit" role="button">Edit</a>
                             
                           {{ Form::close() }}
 

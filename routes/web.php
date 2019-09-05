@@ -23,9 +23,7 @@ Route::get('/index',function(){
 });
 */
 
-Route::resource('catagory' , 'catagoryController');
-Route::resource('product' , 'productController');
-Route::resource('user' , 'usersController');
+
 //Auth::routes();
   // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
    // Route::post('register', 'Auth\RegisterController@register');
@@ -34,7 +32,7 @@ Route::resource('user' , 'usersController');
 
 Route::get('/index','frontendController@index');
 Route::get('/products','frontendController@products');
-//Route::get('/products/{catagory}','frontendcontroller@product');
+Route::get('/products/{catagory}','frontendcontroller@filter');
 //Route::get('/products/ajax/{id}','productpageController@filter');
 
 //Route::get('/products/{id?}','productpageController@filter')->name('filter');
@@ -72,8 +70,42 @@ Route::get('/productdetail/{id}', 'frontendController@show');
    //Route::get('logout', 'Auth\LoginController@logoutcustomuser')->name('logoutcustomuser')->name('customuserslogout');
 
 
-   Route::get('/productdetail/writereview1/{id}','frontendController@reviewWhenLoggedIn');
-   Route::get('/productdetail/writereview2/{id}','frontendController@reviewWhenNotLoggedIn');
+   
+   //Route::get('/productdetail/writereview2/','frontendController@reviewWhenNotLoggedIn');
 
-    Route::post('/productdetail/writereview1/{id}','frontendController@store');
-   Route::post('/productdetail/writereview2/{id}','frontendController@login');
+    
+  // Route::post('/productdetail/writereview2/{id}','frontendController@login');
+
+
+
+
+
+Auth::routes();
+Route::get('/home','HomeController@index');
+  Route::prefix('admin')->group(function() {
+    Route::get('/login', 'Auth\admin\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\admin\AdminLoginController@login')->name('admin.login.submit');
+     Route::post('/logout', 'Auth\admin\AdminLoginController@logout')->name('admin.logout');
+
+  });
+
+
+  Route::group(['prefix' => 'admin'], function()
+{
+   Route::resource('/catagory' , 'catagoryController');
+Route::resource('/product' , 'productController');
+Route::resource('/user' , 'usersController');
+  Route::get('/home', 'AdminController@index')->name('admin.dashboard');
+
+});
+
+
+
+   Route::group(['prefix' => '/productdetail/writereview1' ,  'middleware' => 'auth'], function()
+{
+Route::get('/{id}','frontendController@reviewWhenLoggedIn');
+Route::post('/{id}','frontendController@store');
+});
+
+
+

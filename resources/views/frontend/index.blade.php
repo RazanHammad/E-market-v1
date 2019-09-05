@@ -206,7 +206,6 @@
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star-o"></i>
 												</div>
-												<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
 											</div>
 											
 										</div>
@@ -241,7 +240,6 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 											</div>
-											<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>
 										</div>
 									</div>
 								</div>
@@ -286,7 +284,8 @@
 													<i class="fa fa-star-o"></i>
 												</div>
 											</div>
-											<!--<h3>Lorem ipsum dolor sit amet dolorem molestie</h3>-->
+											<h3>
+								{{ str_limit($pr->details, $limit = 5, $end = '...') }}															</h3>
 											<strong>${{$pr->price}}</strong>
 											<div><a href="/products" class="btn btn-default" role="button">Add to Cart</a><span class="pull-right"><i class="fa fa-heart-o"></i> Add to Wishlist</span></div>
 										</div>

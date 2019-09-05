@@ -30,7 +30,7 @@ Show Products
                     <th>Price</th>
                       <th>IMG</th>
                        <th>Catagory</th>
-                          <th><a class="btn btn-success" href="/product/create" role="button">Create Product +</a></th>
+                          <th><a class="btn btn-success" href="/admin/product/create" role="button">Create Product +</a></th>
                   </tr>
                 </thead>
              
@@ -49,7 +49,7 @@ Show Products
                     <td>
                     
                      
-                         <a class="btn btn-primary" href="/product/{{$pr->id}}" role="button">Details</a> 
+                         <a class="btn btn-primary" href="/admin/product/{{$pr->id}}" role="button">Details</a> 
                          
 
 

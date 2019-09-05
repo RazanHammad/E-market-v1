@@ -40,9 +40,9 @@
 								<li><a href="#" ><i class="fa fa-user"></i> My Account</a></li>
 								<li><a href="#" ><i class="fa fa-heart-o"></i> Wishlist (0)</a></li>
 								<li><a href="#" ><i class="fa fa-file-o"></i> Compare (0)</a></li>
-								<li><a class="register" href="/register/customusers" >Register</a></li>
+								<li><a class="register" href="/register" >Register</a></li>
 
-								<li><a class="register" href="/login/customusers" >Login</a></li>
+								<li><a class="register" href="/login" >Login</a></li>
 							</ul>	
 						</div>	
 					</div>	
@@ -56,10 +56,7 @@
 						<div class="col-sm-4">
 							<div class="logo"><i class="fa fa-diamond"></i>E - Market</div>
 						</div>
-						<div class="col-sm-8">
-							<h3 class="add bb-year-end-ribbon hidden-xs"><img src="{{asset('frontend')}}/images/red-tablet.png" width="40px;" alt="" /> 
-							<span>Hi! We Can <span>Help</span> Your Business</span> <button class="btn btn-default"> Get Stared </button></h3>
-						</div>
+						
 					</div>
 				</div>
 			</div>

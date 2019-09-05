@@ -26,7 +26,7 @@ Show Catagory
                   <tr>
                     <th>Catagory Title</th>
                     <th>Catagory Image</th>
-                    <th><a class="btn btn-success" href="/catagory/create" role="button">Create Catagory +</a></th>
+                    <th><a class="btn btn-success" href="/admin/catagory/create" role="button">Create Catagory +</a></th>
                     
                   </tr>
                 </thead>
@@ -39,7 +39,7 @@ Show Catagory
                     <td>   <img class="img-responsive" style="max-height: 70px;" src="{{url('storage/img/'.$ctg->img)}}"/></td>
                     <td>
                     
-                           <a class="btn btn-primary" href="/catagory/{{$ctg->id}}" role="button">Details</a> 
+                           <a class="btn btn-primary" href="/admin/catagory/{{$ctg->id}}" role="button">Details</a> 
                          
 
 

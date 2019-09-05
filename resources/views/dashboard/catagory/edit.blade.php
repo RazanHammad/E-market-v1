@@ -39,7 +39,7 @@ Edit Catagory
      
           {{Form::hidden('_method','PUT')}}
      {{Form::submit('Update',['class'=>'btn btn-primary'])}}
-      <a class="btn btn-primary" href="/catagory" role="button">Back</a>
+      <a class="btn btn-primary" href="/admin/catagory" role="button">Back</a>
     </div>
   </div>
 </div>

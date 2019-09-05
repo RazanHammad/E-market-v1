@@ -121,7 +121,7 @@
 				<div class="container">		
 					<div class="row">	
 						<div class="col-sm-12 text-center">
-							<p>Copyright 2015 made by <a href="#">Bootultra.com</a> & Disign by Shaifuddin. All Rights Reserved.</p>
+							<p>Copyright 2020 made by <a href="#">Razan Hammad</a> All Rights Reserved.</p>
 							<ul class="list-inline center-block">
 								<li><a href="#"><img src="{{asset('frontend')}}/images/card-1.png"></a></li>
 								<li><a href="#"><img src="{{asset('frontend')}}/images/card-2.png"></a></li>

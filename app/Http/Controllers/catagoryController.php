@@ -7,6 +7,10 @@ use App\catagory;
 
 class catagoryController extends Controller
 {
+       public function __construct()
+{
+    $this->middleware('auth:admin');
+}
     /**
      * Display a listing of the resource.
      *
@@ -61,7 +65,7 @@ class catagoryController extends Controller
        $catagory->title = $request->input('title');
        $catagory->img = $fileNameStore;
        $catagory->save();
-       return redirect('/catagory')->with('success' , 'catagory created successfully');
+       return redirect('/admin/catagory')->with('success' , 'catagory created successfully');
     }
 
     /**
@@ -122,7 +126,7 @@ $catagory= catagory::find($id);
         $catagory->img = $fileNameStore;
 }
        $catagory->save();
-       return redirect('/catagory')->with('success' , 'catagory updated successfully');
+       return redirect('/admin/catagory')->with('success' , 'catagory updated successfully');
     }
 
     /**
@@ -135,6 +139,6 @@ $catagory= catagory::find($id);
     {
         $catagory = catagory::find($id);
         $catagory->delete();
-        return redirect ('/catagory')->with('success' , 'catagory deleted successfully');
+        return redirect ('/admin/catagory')->with('success' , 'catagory deleted successfully');
     }
 }

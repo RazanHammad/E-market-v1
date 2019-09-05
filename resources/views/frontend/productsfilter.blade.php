@@ -9,22 +9,22 @@
 							<div class="well wedget">
 							 	<strong>Fillter by price</strong>
 								<div class="heading-border b-color-6"></div>
-
+								
 								<div class="progress">
 								  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
 									<span class="sr-only">20% Complete</span>
 								  </div>
 								</div>
-
+								
 								<small>Currency Shopping By :</small>
 								<p>Price : <span>$260 - $980</span></p>
-
+								
 								<a class="btn btn-default btn-block" href="#">Fillter Now</a>
 							</div>
 							<div class="well wedget">
 							 	<strong>Fillter by Brand</strong>
 								<div class="heading-border b-color-6"></div>
-
+								
 								 <ul class="check-box">
 									<li>
 										<div class="btn-group" data-toggle="buttons">
@@ -73,9 +73,9 @@
 											<p class="media-heading">Lorem ipsum dolor</p>
 											<div class="category">
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
 												<i class="fa fa-star-o"></i>
 											</div>
 											<strong>$899.99</strong>
@@ -87,9 +87,9 @@
 											<p class="media-heading">Lorem ipsum dolor</p>
 											<div class="category">
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
 												<i class="fa fa-star-o"></i>
 											</div>
 											<strong>$899.99</strong>
@@ -101,24 +101,24 @@
 											<p class="media-heading">Lorem ipsum dolor</p>
 											<div class="category">
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
 												<i class="fa fa-star-o"></i>
 											</div>
 											<strong>$899.99</strong>
 										</div>
 									</li>
-
+									
 								</ul>
 							</div>
-
+							
 							<div class="single-add">
 								<h4>Get <span>50%</span> Discount</h4>
 								<a href="#" class="btn btn-default" role="button">Learn More</a>
 								<span class="img-add"><img class="img-responsive" src="{{asset('frontend')}}/images/red-tablet.png" width="120px" alt="" /></span>
 							</div>
-
+							
 							<div class="well wedget footer-top">
 							 	<strong>Featured Products</strong>
 								<div class="heading-border b-color-6"></div>
@@ -129,9 +129,9 @@
 											<p class="media-heading">Lorem ipsum dolor</p>
 											<div class="category">
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
 												<i class="fa fa-star-o"></i>
 											</div>
 											<strong>$899.99</strong>
@@ -143,9 +143,9 @@
 											<p class="media-heading">Lorem ipsum dolor</p>
 											<div class="category">
 												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
-												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
+												<i class="fa fa-star"></i> 
 												<i class="fa fa-star-o"></i>
 											</div>
 											<strong>$899.99</strong>
@@ -169,7 +169,7 @@
 								</div>
 							</div>
 						</div> <!-- section title -->
-
+						
 						<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 							<ol class="carousel-indicators">
 								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"><i class="fa fa-angle-left"></i></li>
@@ -368,140 +368,93 @@
 												<div class="collapse navbar-collapse" id="desktop">
 													<div class="navbar-form nav navbar-nav navbar-left">
 														<div class="selection"> Sort by
+			<select  name="catagory_id" class="form-control" >
+				<option>Catagory</option>
+				 @foreach ($catagories as $catagory)
+   														
+   			<option  selected="selected" value="{{ $catagory->id }}"><a href="{{$catagory->id}}">{{ $catagory->title }}</a></option>
+	 
+        																
+					@endforeach
 
-															<select  name="catagory_id" id="category_id" class="form-control" >
-																<option value="">Catagory</option>
-																 @foreach ($catagories as $catagory)
-   														            <option  value="{{ $catagory->id }}">
-                                                                        {{ $catagory->title }}
-                                                                    </option>
-                                                                @endforeach
-															</select>
+
+					</select>
+															
+															
+														
+
+																<!--<i class="fa fa-long-arrow-up"></i>-->
+															
 														</div>
-													</div>
+
+														
+													</div>	
+
 												</div>
 											</nav>
 										</div>
-									</div>
+									</div>	
 
-
-									<div class="row" id="products">
+									
+									<div class="row">
 										@foreach($products as $product)
-										    <div class="col-sm-4">
-											    <div class="thumbnail">
-                                                    <!--span class="e-label"><div>Sale</div></span-->
-                                                    <span class="service-link text-center">
-                                                        <img class="img-responsive" src="{{asset('frontend/images/f-pro-1.jpg')}}" alt="">
-                                                        <div class="list-inline">
-                                                            <a href=""><i class="fa fa-eye"></i></a>
-                                                            <a href=""><i class="fa fa-link"></i></a>
-                                                        </div>
-                                                    </span>
-                                                    <div class="caption">
-                                                        <div class="category"> {{$product->title}}
-                                                            <div class="pull-right">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                        </div>
-                                                        <h3></h3>
-                                                        <strong></strong>
-                                                        <div>
-                                                            <a href="#" class="btn btn-default" role="button">Add to Cart</a>
-                                                            <span class="pull-right"><i class="fa fa-heart-o"></i> Add to Wishlist</span>
-                                                        </div>
-                                                    </div>
-											    </div>
-										    </div>
-
-
-
-
-
-
-
-									    @endforeach
+										<div class="col-sm-4">
+											<div class="thumbnail">
+												<!--span class="e-label"><div>Sale</div></span-->
+												<span class="service-link text-center">
+													<img class="img-responsive" src="{{asset('frontend')}}/images/f-pro-1.jpg" alt="">
+													<div class="list-inline">
+														<a href=""><i class="fa fa-eye"></i></a>
+														<a href=""><i class="fa fa-link"></i></a>
+													</div>
+												</span>
+												<div class="caption">
+													<div class="category"> {{$product->title}}
+														<div class="pull-right">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star-o"></i>
+														</div>
+													</div>
+													<h3></h3>
+													<strong></strong>
+													<div><a href="#" class="btn btn-default" role="button">Add to Cart</a><span class="pull-right"><i class="fa fa-heart-o"></i> Add to Wishlist</span></div>
+												</div>
+											</div>
+										</div>
+									@endforeach
 									</div>
-
-
+								
+									
 								</div>
 								</form>
 							</div>
 						</div> <!-- desktop -->
-
+					
 					</div><!--div 9 -->
 				</div>
 			</div>
 		</section>
+		
+	
+       <!-- <script type="text/javascript">
 
-
+    jQuery(document).ready(function($){
+  	$('#catagory_id').change(function(){
+			$.get("{{ url('/products')}}", 
+				{ option: $(this).val() }, 
+				function(data) {
+				console.log(data);
+				});
+		});
+	});
+<script>
+    function filter(id)
+    {
+        window.location.href = + '/' + id;
+</script>
+</script>-->
 @endsection
-@section('js')
-    <script !src="">
-        $(document).ready(function() {
-            $('#category_id').change(function (e) {
-                let catagory_id=(e.target.value);
-                let url= "{{url('products')}}";
-                let data = {'_token':$('meta[name=csrf-token]').attr('content'),catagory_id};
-                // console.log(data);
-                $.ajax({
-                    url:url,
-                    method:'get',
-                    data:data,
-                    success:function(res){
-                        console.log(res.length);
-                        $('#products').empty();
-                        if (res.length === 0){
-                            $('#products').append('<div class="col-md-12">There is no product for this category</div>')
-                        }
-                        else {
-                            $('#products').empty();
-                            $.each(res,function (key,value) {
-                                // console.log(`${key} => ${value.title}`)
-                                $('#products').append(`
-                            <div class="col-sm-4">
-                                <div class="thumbnail">
-                                    <!--span class="e-label"><div>Sale</div></span-->
-                                    <span class="service-link text-center">
-                                        <img class="img-responsive" src="{{asset('frontend/images/f-pro-1.jpg')}}" alt="">
-                                        <div class="list-inline">
-                                          <a href=""><i class="fa fa-eye"></i></a>
-                                          <a href=""><i class="fa fa-link"></i></a>
-                                        </div>
-                                    </span>
-                                    <div class="caption">
-                                        <div class="category">${value.title}
-                                            <div class="pull-right">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </div>
-                                        </div>
-                                        <h3></h3>
-                                        <strong></strong>
-                                        <div>
-                                            <a href="#" class="btn btn-default" role="button">
-                                                Add to Cart
-                                            </a>
-                                            <span class="pull-right">
-                                                <i class="fa fa-heart-o"></i> Add to Wishlist
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>`);
-                            });
-                        }
 
-
-                    }
-                });
-            })
-        });
-    </script>
-@stop

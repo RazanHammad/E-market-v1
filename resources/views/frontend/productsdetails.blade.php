@@ -51,13 +51,11 @@ product Detail
 					
 					<div class="col-sm-12">
 						<ul class="list-inline pull-right">
-							@if(auth()->check())
+					
 								<li><a class="register" href="/productdetail/writereview1/{{$product->id}}" >Write Review</a></li>
-
-								@else
-
-								<li><a class="register" href="/productdetail/writereview2/{{$product->id}}" >Write Review</a></li>
-								@endif
+								
+							
+								
 							</ul>
 					</div>
 
@@ -73,7 +71,7 @@ product Detail
 									</div>
 									<div class="media-body">
 										<ul class="list-inline comment-info">
-											<li><strong></strong></li>
+											<li><strong>{{$review->users->name}}</strong></li>
 											<li>{{$review->created_at}}</li>
 
 										</ul>

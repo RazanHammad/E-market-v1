@@ -64,7 +64,7 @@ Create Product
         <br>
 
      {{Form::submit('Create',['class'=>'btn btn-primary btn-sm'])}}
-      <a class="btn btn-primary btn-sm" href="/product" role="button">Back</a>
+      <a class="btn btn-primary btn-sm" href="/admin/product" role="button">Back</a>
 
     </div>
   </div>

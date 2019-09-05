@@ -21,7 +21,7 @@
                   <tr>
                     <th>Catagory Title</th>
                     <th>Catagory Image</th>
-                  	<th><a class="btn btn-primary" href="/catagory" role="button">Back</a> </th>
+                  	<th><a class="btn btn-primary" href="/admin/catagory" role="button">Back</a> </th>
                     
                   </tr>
                 </thead>
@@ -42,7 +42,7 @@
                           {{Form::hidden('_method','delete')}}
                           {{Form::submit('Delete',['class'=>'btn btn-danger','role'=>'button'])}}
                         
-                           <a class="btn btn-success" href="/catagory/{{$catagory->id}}/edit" role="button">Edit</a>
+                           <a class="btn btn-success" href="/admin/catagory/{{$catagory->id}}/edit" role="button">Edit</a>
                             
                           {{ Form::close() }}
 
